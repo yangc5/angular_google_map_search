@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GoogleMapSearch</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <!-- build:css style.css -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-    <!-- build:js scripts/scripts.js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="js/mapScript.js"></script>
-    <!-- endbuild -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYYymMXFuy4lqi_aqypkMcogYSwqiAQrI&libraries=places&callback=initAutocomplete"></script>
-  </body>
+<head>
+  <title>GoogleMapSearch</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <!-- build:css style.css -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <div id="info-block" class="col-md-4">
+    <div class="row">
+      <button class="btn btn-default pull-right" id="hide-info">Hide</button>
+    </div>
+
+    <div class="row">
+
+      <!-- <div class="thumbnail">
+      <img src="http://www.australia.com/content/australia/en/places/sydney/nsw-sydney-harbour/_jcr_content/image.adapt.761.medium.jpg" alt="sydney">
+      <div class="caption">
+      <h3>Sydney</h3>
+      <p>Capital of Australia</p>
+      <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+    </div>
+  </div> -->
+
+  <div class="thumbnail">
+    <img src="http://www.australia.com/content/australia/en/places/sydney/nsw-sydney-harbour/_jcr_content/image.adapt.761.medium.jpg" alt="sydney">
+    <div class="caption">
+      <h3>Sydney</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi repudiandae doloremque quos, veniam atque, reiciendis earum fugiat architecto corporis perferendis perspiciatis ratione. Magni optio dolorem, quae aspernatur quas consectetur corporis!</p>
+    </div>
+  </div>
+</div>
+</div>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+<!-- build:js scripts/scripts.js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/mapScript.js"></script>
+<!-- endbuild -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYYymMXFuy4lqi_aqypkMcogYSwqiAQrI&libraries=places&callback=initAutocomplete"></script>
+</body>
 </html>

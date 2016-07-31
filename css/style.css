@@ -50,3 +50,32 @@ html, body {
 #target {
   width: 345px;
 }
+
+#info-block {
+  padding-top: 5px;
+}
+
+#hide-info {
+  border: none;
+  margin: 5px;
+}
+
+@media (min-width: 768px){
+  #info-block {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 33.333%;
+    overflow-y: scroll;
+  }
+
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    width: 66.667%;
+  }
+}
