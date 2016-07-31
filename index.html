@@ -10,11 +10,12 @@
     <!-- endbuild -->
   </head>
   <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
     <!-- build:js scripts/scripts.js -->
     <script src="bower_components/angular/angular.js"></script>
-    <!-- endbuild -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYYymMXFuy4lqi_aqypkMcogYSwqiAQrI&libraries=places&callback=initMap" async defer></script>
     <script src="js/mapScript.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYYymMXFuy4lqi_aqypkMcogYSwqiAQrI&libraries=places&callback=initAutocomplete"></script>
+    <!-- endbuild -->
   </body>
 </html>

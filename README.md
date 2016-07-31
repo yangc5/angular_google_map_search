@@ -2,3 +2,4 @@ Create a web app (desktop or mobile) that provides a query box and a search butt
 
 * Use Bower to manage front end packages
 * Use Gulp as build system
+* Use Google Maps Places API
