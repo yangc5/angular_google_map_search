@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
+var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var usemin = require('gulp-usemin');
 var minifyHtml = require('gulp-minify-html');
@@ -16,6 +17,7 @@ gulp.task('usemin', function () {
     return gulp.src('./*.html')
         .pipe(usemin({
             html: [minifyHtml({empty: true, conditionals:true})],
+            css: [rev(), cleanCss, 'concat'],
             js: [uglify(), 'concat', rev()]
         }))
         .pipe(gulp.dest('dist/'));
