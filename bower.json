@@ -1,0 +1,21 @@
+{
+  "name": "angular_google_map_search",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Chen Yang <yangc5@mail.uc.edu>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
