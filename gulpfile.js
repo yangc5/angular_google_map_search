@@ -8,8 +8,8 @@ var rev = require('gulp-rev');
 
 gulp.task('clean', function (cb) {
     del([
-        // everything inside the dist folder
-        'dist/**/*'
+        // everything inside the dist folder except index.php for deployment into Heroku
+        'dist/**/*', '!dist/index.php'
     ], cb);
 });
 
