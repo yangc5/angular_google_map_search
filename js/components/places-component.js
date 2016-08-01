@@ -2,7 +2,11 @@ var Places = {
   controller: ['$scope', 'GoogleMapService', function($scope, GoogleMapService) {
     this.places = GoogleMapService.getPlaces();
     this.getUpdate = function(){
-      this.places = GoogleMapService.getPlaces();
+      GoogleMapService.getPlaces().then(function(promise){
+        this.places = promise;
+        console.log(promise);
+      });
+
     }
 
   }],

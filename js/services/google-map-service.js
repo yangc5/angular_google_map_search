@@ -1,18 +1,28 @@
 angular.module('app')
-       .service('GoogleMapService',function GoogleMapService() {
+.service('GoogleMapService',['$q', function GoogleMapService($q) {
+  this.getPlaces = function(){
+    var map;
+    var service;
+    var infowindow;
+    var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+    var placesToReturn;
 
-         this.getPlaces = function(){
-          
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
 
-           var places = searchBox.getPlaces();
+    var request = {
+      location: pyrmont,
+      radius: '500',
+      types: ['store']
+    };
 
-           if (places.length == 0) {
-             return;
-           }
-           console.log(places);
-           return places;
-         };
+    service = new google.maps.places.PlacesService(map);
 
-
-
-});
+    return service.nearbySearch(request, function(places){
+      console.log(places);
+      return places;
+    });
+  };
+}]);
