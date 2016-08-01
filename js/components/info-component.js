@@ -13,7 +13,7 @@ var Info = {
     '<button ng-click="infoCtrl.toggleVisibility()" class="btn btn-default pull-right" id="hide-info">Hide</button>',
     '</div>',
     '<div class="row">',
-    '<place></place>',
+    '<places></places>',
     '</div>',
     '</div>'
   ].join('')
