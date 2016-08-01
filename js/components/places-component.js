@@ -1,11 +1,11 @@
 var Places = {
-  controller: function($scope) {
+  controller: ['$scope', function($scope) {
     this.places = [
       {id: 1, name: 'Sydney', description: 'capital of Australia'},
       {id: 2, name: 'Austin', description: 'Texas capital'},
       {id: 3, name: 'Shanghai', description: 'largest city in China'}
     ];
-  },
+  }],
   controllerAs: 'placesCtrl',
   template: [
     '<div ng-repeat="place in placesCtrl.places" class="thumbnail">',

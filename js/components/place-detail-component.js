@@ -1,7 +1,7 @@
 var Place = {
-  controller: function($scope) {
+  controller: ['$scope', function($scope) {
     this.place = {id: 1, name: 'Sydney', description: 'capital of Australia lorem'};
-  },
+  }],
   controllerAs: 'placeCtrl',
   template: [
     '<div class="thumbnail">',
