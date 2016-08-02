@@ -4,7 +4,7 @@ Technologies:
 * Use Bower to manage front end packages
 * Use Gulp as build system
 * Use Google Maps Places API
-* Deployed on Heroku: https://angular-google-map-search.herokuapp.com/
+* Deployed on Heroku: https://google-map-search.herokuapp.com/
 
 Users can:
 * Search places using Google Maps Places API
