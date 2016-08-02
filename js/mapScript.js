@@ -33,6 +33,16 @@ function initAutocomplete() {
       return;
     }
 
+    $('#places').html('');
+
+    places.forEach(function(place){
+      console.log(place);
+      console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
+      $('#places').append(
+        '<div ng-repeat="place in placesCtrl.places" class="thumbnail"> <img src="http://www.australia.com/content/australia/en/places/sydney/nsw-sydney-harbour/_jcr_content/image.adapt.761.medium.jpg" alt="sydney"> <div class="caption"> <h3>'+place.name+'</h3> <p>'+place.formatted_address+'</p> <p><a href="#" class="btn btn-primary" role="button">Button</a></p> </div> </div>'
+      );
+    });
+
     // Clear out the old markers.
     markers.forEach(function(marker) {
       marker.setMap(null);
