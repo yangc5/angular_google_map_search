@@ -36,10 +36,13 @@ function initAutocomplete() {
     $('#places').html('');
 
     places.forEach(function(place){
-      console.log(place);
-      console.log(place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
+      var detailService = new google.maps.places.PlacesService(map);
+      detailService.getDetails({placeId: place.place_id}, function(detail){
+        console.log(+detail);
+      });
+
       $('#places').append(
-        '<div ng-repeat="place in placesCtrl.places" class="thumbnail"> <img src="http://www.australia.com/content/australia/en/places/sydney/nsw-sydney-harbour/_jcr_content/image.adapt.761.medium.jpg" alt="sydney"> <div class="caption"> <h3>'+place.name+'</h3> <p>'+place.formatted_address+'</p> <p><a href="#" class="btn btn-primary" role="button">Button</a></p> </div> </div>'
+        '<div class="thumbnail"> <img src="'+place.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 300})+'" alt="'+place.name+'"> <div class="caption"> <h3>'+place.name+'</h3> <p>'+place.formatted_address+'</p> <p><a href="#" class="btn btn-primary view-details" role="button" id="'+place.place_id+'">Website</a></p> </div> </div>'
       );
     });
 
@@ -81,4 +84,16 @@ function initAutocomplete() {
     });
     map.fitBounds(bounds);
   });
+
+  $('#places').on('click', '.view-details', function(event){
+    event.preventDefault();
+    service = new google.maps.places.PlacesService(map);
+    service.getDetails({placeId: $(this).attr('id')}, function(place){
+      var website = place.website;
+      window.open(website, '_blank');
+
+    });
+  })
+
+
 }
