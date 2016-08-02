@@ -75,11 +75,15 @@ function initAutocomplete() {
 
   $('#places').on('click', '.view-details', function(event){
     event.preventDefault();
-    service = new google.maps.places.PlacesService(map);
+    var service = new google.maps.places.PlacesService(map);
+    var that = this;
+
     service.getDetails({placeId: $(this).attr('id')}, function(place){
       var website = place.website;
       if(website!==undefined){
         window.open(website, '_blank');
+      } else {
+        $(that).addClass("disabled");
       }
     });
   });
