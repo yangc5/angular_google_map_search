@@ -1,11 +1,3 @@
-// This example adds a search box to a map, using the Google Place Autocomplete
-// feature. People can enter geographical searches. The search box will return a
-// pick list containing a mix of places and predicted search terms.
-
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -33.8688, lng: 151.2195},
@@ -36,10 +28,6 @@ function initAutocomplete() {
     $('#places').html('');
 
     places.forEach(function(place){
-      var detailService = new google.maps.places.PlacesService(map);
-      detailService.getDetails({placeId: place.place_id}, function(detail){
-        console.log(+detail);
-      });
 
       $('#places').append(
         '<div class="thumbnail"> <img src="'+place.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 300})+'" alt="'+place.name+'"> <div class="caption"> <h3>'+place.name+'</h3> <p>'+place.formatted_address+'</p> <p><a href="#" class="btn btn-primary view-details" role="button" id="'+place.place_id+'">Website</a></p> </div> </div>'
@@ -90,10 +78,10 @@ function initAutocomplete() {
     service = new google.maps.places.PlacesService(map);
     service.getDetails({placeId: $(this).attr('id')}, function(place){
       var website = place.website;
-      window.open(website, '_blank');
-
+      if(website!==undefined){
+        window.open(website, '_blank');
+      }
     });
-  })
-
+  });
 
 }

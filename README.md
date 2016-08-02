@@ -7,5 +7,4 @@ Create a web app (desktop or mobile) that provides a query box and a search butt
 Users can:
 * Search places using Google Maps Places API
 * Query box has Autocomplete functionality
-* View and click on most recent searches
-* Choose to view search results in list view and detailed view
+* Result shows places photo, name, location, and links to official website (if applicable)
